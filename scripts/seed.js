@@ -162,7 +162,11 @@ async function seedRevenue(client) {
 
 async function main() {
   const client = await db.connect();
-  console.log(client);
+  console.log("Database ; ", db)
+  console.log()
+  console.log()
+  console.log()
+  console.log("Client : ", client);
   await seedUsers(client);
   await seedCustomers(client);
   await seedInvoices(client);
