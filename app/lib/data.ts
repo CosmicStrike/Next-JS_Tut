@@ -14,7 +14,7 @@ import { unstable_noStore as noStore } from 'next/cache';
 export async function fetchRevenue() {
   // Add noStore() here prevent the response from being cached.
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
-  noStore();
+  // noStore();
   try {
     // Artificially delay a response for demo purposes.
     // Don't do this in production :)
@@ -56,7 +56,7 @@ export async function fetchLatestInvoices() {
 }
 
 export async function fetchCardData() {
-  noStore();
+  // noStore();
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
   try {
@@ -182,7 +182,7 @@ export async function fetchInvoiceById(id: string) {
 }
 
 export async function fetchCustomers() {
-  noStore();
+  // noStore();
 
   try {
     const data = await sql<CustomerField>`
@@ -202,7 +202,7 @@ export async function fetchCustomers() {
 }
 
 export async function fetchFilteredCustomers(query: string) {
-  noStore();
+  // noStore();
 
   try {
     const data = await sql<CustomersTableType>`
@@ -237,7 +237,7 @@ export async function fetchFilteredCustomers(query: string) {
 }
 
 export async function getUser(email: string) {
-  noStore();
+  // noStore();
 
   try {
     const user = await sql`SELECT * FROM users WHERE email=${email}`;
