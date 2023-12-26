@@ -34,7 +34,7 @@ export async function fetchRevenue() {
 }
 
 export async function fetchLatestInvoices() {
-  noStore();
+  // noStore();
 
   try {
     const data = await sql<LatestInvoiceRaw>`
