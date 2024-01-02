@@ -21,7 +21,7 @@ export const { auth, signIn, signOut } = NextAuth({
     providers: [
         Credentials({
             async authorize(credentials) {
-                console.log("Creds : ", credentials);
+                // console.log("Creds : ", credentials);
                 const parsedCredentials = z
                     .object({ email: z.string().email(), password: z.string().min(6) })
                     .safeParse(credentials);
@@ -35,7 +35,7 @@ export const { auth, signIn, signOut } = NextAuth({
                     if (passwordsMatch) return user;
                 }
 
-                console.log('Invalid credentials');
+                // console.log('Invalid credentials');
                 return null;
             },
         }),
